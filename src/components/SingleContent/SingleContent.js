@@ -1,19 +1,22 @@
 import { Badge } from "@material-ui/core"
 import { img_300, unavailable } from "../../config/config"
 import "./SingleContent.css"
+import { withStyles } from "@material-ui/core/styles"
 import ContentModal from "../ContentModal/ContentModal"
 
-const SingleContent = ({
-  id,
-  poster,
-  title,
-  date,
-  media_type,
-  vote_average,
-}) => {
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    padding: "0 4px",
+    color: "white",
+    backgroundColor: "#12435a",
+    fontWeight: "bold",
+  },
+}))(Badge)
+
+function SingleContent({ id, poster, title, date, media_type, vote_average }) {
   return (
     <ContentModal media_type={media_type} id={id}>
-      <Badge
+      <StyledBadge
         badgeContent={vote_average}
         color={vote_average > 6 ? "primary" : "secondary"}
       />

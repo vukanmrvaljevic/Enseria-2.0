@@ -1,3 +1,7 @@
+* {
+    scroll-behavior: smooth;
+  }
+  
 .App{
     min-height: 100vh;
     background-color: rgba(8,29,37);
@@ -13,8 +17,9 @@
     font-family: "Montserrat", sans-serif;
     font-size: 2vw;
     padding: 4px;
+    padding-bottom:50px;
     border-radius: 50px;
-    color: white;
+    color: whitesmoke; 
   }
 
 
@@ -23,3 +28,10 @@
         padding-top: 70px;
     }
 }
+
+@media (max-width: 1000px) {
+    .pageTitle {
+      font-size: 6.4vw;
+    }
+  }
+  
