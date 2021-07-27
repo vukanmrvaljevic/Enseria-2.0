@@ -1,6 +1,6 @@
 import {
   Button,
-  createMuiTheme,
+  createTheme,
   Tab,
   Tabs,
   TextField,
@@ -20,11 +20,14 @@ const Search = () => {
   const [content, setContent] = useState([])
   const [numOfPages, setNumOfPages] = useState()
 
-  const darkTheme = createMuiTheme({
+  const darkTheme = createTheme({
     palette: {
       type: "dark",
       primary: {
-        main: "#fff",
+        main: "#61BAED",
+      },
+      secondary: {
+        main: "#380000",
       },
     },
   })

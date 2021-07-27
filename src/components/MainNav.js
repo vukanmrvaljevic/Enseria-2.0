@@ -1,4 +1,5 @@
 import React from "react"
+// import "./MainNav.css"
 import { makeStyles } from "@material-ui/core/styles"
 import BottomNavigation from "@material-ui/core/BottomNavigation"
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction"
@@ -11,9 +12,11 @@ import { useHistory } from "react-router-dom"
 
 const useStyles = makeStyles({
   root: {
-    width: "100%",
+    width: "30%",
+    marginLeft: "35%",
     position: "fixed",
     bottom: 0,
+    top: 20,
     backgroundColor: "#12435a",
     zIndex: 100,
   },

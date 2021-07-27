@@ -112,6 +112,7 @@ function ContentModal({ children, media_type, id }) {
                   className="ContentModal__landscape"
                 />
                 <div className="ContentModal__about">
+                  &nbsp; &nbsp;
                   <span className="ContentModal__title">
                     {content.name || content.title} (
                     {(
@@ -124,19 +125,16 @@ function ContentModal({ children, media_type, id }) {
                   {content.tagline && (
                     <i className="tagline">{content.tagline}</i>
                   )}
-
                   <span className="ContentModal__description">
                     {content.overview}
                   </span>
-
                   <div>
                     <Carousel id={id} media_type={media_type} />
                   </div>
-
                   <Button
                     variant="contained"
                     startIcon={<YouTubeIcon />}
-                    color="secondary"
+                    // color="secondary"
                     target="__blank"
                     href={`https://www.youtube.com/watch?v=${video}`}
                   >

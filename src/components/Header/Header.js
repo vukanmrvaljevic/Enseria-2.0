@@ -1,5 +1,5 @@
 import "./Header.css"
-import image from "../../images/film-text.png"
+import image from "../images/film-text.png"
 
 function Header() {
   return (

@@ -46,15 +46,73 @@ const Gallery = ({ id, media_type }) => {
     // eslint-disable-next-line
   }, [])
 
+  //   const createItems = (length, [handleClick]) => {
+  //     let deltaX = 0
+  //     let difference = 0
+  //     const swipeDelta = 20
+
+  //     return Array.from({ length }).map((item, i) => (
+  //       <div
+  //         data-value={i + 1}
+  //         className="item"
+  //         onMouseDown={(e) => (deltaX = e.pageX)}
+  //         onMouseUp={(e) => (difference = Math.abs(e.pageX - deltaX))}
+  //         onClick={() => difference < swipeDelta && handleClick(i)}
+  //       >
+  //         <span className="item-inner" />
+  //       </div>
+  //     ))
+  //   }
+
+  //   const [activeIndex, setActiveIndex] = useState(0)
+  //   const [item] = useState(createItems(5, [setActiveIndex]))
+
+  //   const slidePrev = () => setActiveIndex(activeIndex - 1)
+  //   const slideNext = () => setActiveIndex(activeIndex + 1)
+  //   const syncActiveIndex = ({ item }) => setActiveIndex(item)
+
+  const renderSlideInfo = ({ item, itemsCount }) => {
+    return `${item}\\${itemsCount}`
+  }
+
+  const renderDotsItem = ({ isActive }) => {
+    return isActive ? "x" : "o"
+  }
+
+  const renderPrevButton = ({ isDisabled }) => {
+    return <span style={{ opacity: isDisabled ? "0.5" : 1 }}>&lt;</span>
+  }
+
+  const renderNextButton = ({ isDisabled }) => {
+    return <span style={{ opacity: isDisabled ? "0.5" : 1 }}>&gt;</span>
+  }
+
+  const renderPlayPauseButton = ({ isPlaying }) => {
+    return isPlaying ? "PAUSE" : "PLAY"
+  }
+
   return (
+    // <AliceCarousel
+    //   mouseTracking
+    //   infinite
+    //   disableDotsControls
+    //   disableButtonsControls
+    //   responsive={responsive}
+    //   items={items}
+    //   autoPlay
+    //   controlsStrategy="alternate"
+    // />
     <AliceCarousel
       mouseTracking
-      infinite
-      disableDotsControls
-      disableButtonsControls
-      responsive={responsive}
       items={items}
-      autoPlay
+      responsive={responsive}
+      autoPlayControls
+      disableSlideInfo={false}
+      renderSlideInfo={renderSlideInfo}
+      renderDotsItem={renderDotsItem}
+      renderPrevButton={renderPrevButton}
+      renderNextButton={renderNextButton}
+      renderPlayPauseButton={renderPlayPauseButton}
     />
   )
 }

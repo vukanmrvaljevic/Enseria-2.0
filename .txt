@@ -1,0 +1,5 @@
+from the movies.js side 
+  useEffect(() => {
+    window.scroll(0, 0)
+    fetchMovies()
+  }, [genreforURL, page])

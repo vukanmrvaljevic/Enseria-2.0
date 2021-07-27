@@ -1,5 +1,4 @@
 import axios from "axios"
-import "./Movies.css"
 import { useEffect, useState } from "react"
 import Genres from "../../components/Genres/Genres"
 import SingleContent from "../../components/SingleContent/SingleContent"
@@ -23,10 +22,9 @@ const Movies = () => {
   }
 
   useEffect(() => {
-    window.scroll(0, 0)
+    // window.scroll(0, 0)
     fetchMovies()
-  }, [genreforURL, page])
-
+  })
   return (
     <div>
       <span className="pageTitle">Movies</span>
