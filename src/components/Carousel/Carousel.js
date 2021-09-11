@@ -46,31 +46,6 @@ const Gallery = ({ id, media_type }) => {
     // eslint-disable-next-line
   }, [])
 
-  //   const createItems = (length, [handleClick]) => {
-  //     let deltaX = 0
-  //     let difference = 0
-  //     const swipeDelta = 20
-
-  //     return Array.from({ length }).map((item, i) => (
-  //       <div
-  //         data-value={i + 1}
-  //         className="item"
-  //         onMouseDown={(e) => (deltaX = e.pageX)}
-  //         onMouseUp={(e) => (difference = Math.abs(e.pageX - deltaX))}
-  //         onClick={() => difference < swipeDelta && handleClick(i)}
-  //       >
-  //         <span className="item-inner" />
-  //       </div>
-  //     ))
-  //   }
-
-  //   const [activeIndex, setActiveIndex] = useState(0)
-  //   const [item] = useState(createItems(5, [setActiveIndex]))
-
-  //   const slidePrev = () => setActiveIndex(activeIndex - 1)
-  //   const slideNext = () => setActiveIndex(activeIndex + 1)
-  //   const syncActiveIndex = ({ item }) => setActiveIndex(item)
-
   const renderSlideInfo = ({ item, itemsCount }) => {
     return `${item}\\${itemsCount}`
   }
@@ -92,16 +67,6 @@ const Gallery = ({ id, media_type }) => {
   }
 
   return (
-    // <AliceCarousel
-    //   mouseTracking
-    //   infinite
-    //   disableDotsControls
-    //   disableButtonsControls
-    //   responsive={responsive}
-    //   items={items}
-    //   autoPlay
-    //   controlsStrategy="alternate"
-    // />
     <AliceCarousel
       mouseTracking
       items={items}
